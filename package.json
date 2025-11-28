@@ -1,0 +1,19 @@
+{
+  "name": "talent-iq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"bun run dev:server\" \"bun run dev:client\"",
+    "start": "npm run start --prefix server",
+    "build": "npm run build --prefix server && npm run build --prefix client",
+    "dev:server": "cd server && bun run dev",
+    "dev:client": "cd client && bun run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   ContactShadows,
   Environment,
@@ -11,11 +12,11 @@ import { useRef } from "react";
 
 // --- 3D Components ---
 
-const StarShape = (props) => {
-  const meshRef = useRef();
+const StarShape = (props: any) => {
+  const meshRef = useRef<any>(null);
 
   // Add slow rotation
-  useFrame((state, delta) => {
+  useFrame((__, delta) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += delta * 0.2;
       meshRef.current.rotation.x += delta * 0.1;
@@ -119,7 +120,7 @@ const NavBar = () => (
   </nav>
 );
 
-const Tag = ({ text }) => (
+const Tag = ({ text }: { text: string }) => (
   <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-500 shadow-sm">
     {text}
   </span>
